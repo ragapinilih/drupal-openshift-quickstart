@@ -1,3 +1,5 @@
 #!/bin/bash
 
+echo "PRE_START_PHP-5.3: Revoke write access to settings.php"
+chmod a-w ${OPENSHIFT_REPO_DIR}php/sites/default/
 chmod a-w ${OPENSHIFT_REPO_DIR}php/sites/default/settings.php
