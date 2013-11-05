@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo ""
+
+if [ ! -d ${OPENSHIFT_DATA_DIR}private ]; then
+  echo "PRE_BUILD: Make private files directory"
+  mkdir ${OPENSHIFT_DATA_DIR}private
+fi
+
+if [ ! -d ${OPENSHIFT_DATA_DIR}files ]; then
+  echo "PRE_BUILD: Make public files directory"
+  mkdir ${OPENSHIFT_DATA_DIR}files
+fi
+
+echo "PRE_BUILD: Create symbolic link for public files directory"
+ln -sf ${OPENSHIFT_DATA_DIR}files ${OPENSHIFT_REPO_DIR}php/sites/default/

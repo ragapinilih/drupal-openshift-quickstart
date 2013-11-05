@@ -1,0 +1,3 @@
+#!/bin/bash
+
+drush --root=${OPENSHIFT_REPO_DIR}php --uri=http://${OPENSHIFT_APP_DNS} core-cron
